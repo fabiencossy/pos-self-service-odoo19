@@ -45,14 +45,10 @@
 
 /* --- NUMPAD --- */
 
-/* Hide "Prix" button */
-.pos-self-service .numpad-price {
-    display: none !important;
-}
-
-/* Hide "%" discount button */
-.pos-self-service .numpad-discount {
-    display: none !important;
+/* Hide Price/Discount/+/- buttons but keep their grid space */
+.pos-self-service .o_self_service_hidden_btn {
+    visibility: hidden !important;
+    pointer-events: none !important;
 }
 
 /* --- LEFT PANEL --- */

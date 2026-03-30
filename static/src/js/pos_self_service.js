@@ -44,7 +44,7 @@ patch(Navbar.prototype, {
 
 // Patch ProductScreen
 patch(ProductScreen.prototype, {
-    // Keep 4-column grid but hide Price, %, +/- buttons (invisible keeps grid space)
+    // Keep 4-column grid, hide Price/Discount/+/- with opacity 0 (keeps grid space)
     getNumpadButtons() {
         if (!this.pos.config.self_service_mode) {
             return super.getNumpadButtons(...arguments);
@@ -54,7 +54,7 @@ patch(ProductScreen.prototype, {
                 return {
                     ...button,
                     disabled: true,
-                    class: (button.class || "") + " invisible",
+                    class: (button.class || "") + " o_self_service_hidden_btn",
                 };
             }
             return button;
