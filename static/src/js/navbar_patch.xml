@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <!-- Add pos-self-service class to root POS div -->
+    <t t-name="pos_self_service.Chrome" t-inherit="point_of_sale.Chrome" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('pos')]" position="attributes">
+            <attribute name="t-attf-class">pos dvh-100 d-flex flex-column {{ pos.config.self_service_mode ? 'pos-self-service' : '' }}</attribute>
+        </xpath>
+    </t>
+
+    <!-- Add a PIN-protected menu button next to CashierName -->
+    <t t-name="pos_self_service.Navbar" t-inherit="point_of_sale.Navbar" t-inherit-mode="extension">
+        <xpath expr="//CashierName" position="after">
+            <button t-if="pos.config.self_service_mode" class="btn btn-light btn-lg lh-lg pos-self-service-menu-btn" t-on-click="onSelfServiceMenuClick">
+                <i class="fa fa-fw fa-bars"/>
+            </button>
+        </xpath>
+    </t>
+
+    <!-- Add "no change given" warning on payment screen -->
+    <t t-name="pos_self_service.PaymentScreenMethods" t-inherit="point_of_sale.PaymentScreenMethods" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('paymentmethods-container')]" position="before">
+            <div t-if="pos.config.self_service_mode" class="alert alert-warning text-center fw-bold mb-2 py-2">
+                <i class="fa fa-exclamation-triangle me-2"/>
+                Nous ne rendons pas la monnaie
+            </div>
+        </xpath>
+    </t>
+
+</templates>

@@ -1,0 +1,73 @@
+/* ===== POS Self-Service Mode ===== */
+
+/* --- TOP BAR / NAVBAR --- */
+
+/* Hide "Commandes" (Orders) button */
+.pos-self-service .orders-button {
+    display: none !important;
+}
+
+/* Hide entire navbar-menu (Register + Orders) - single order mode */
+.pos-self-service .navbar-menu {
+    display: none !important;
+}
+
+/* Hide navbar separator */
+.pos-self-service .navbar-separator {
+    display: none !important;
+}
+
+/* Hide order tabs (1001, etc.) and the "+" new order button */
+.pos-self-service .pos-leftheader .list-plus-btn {
+    display: none !important;
+}
+.pos-self-service .pos-leftheader .list-container-items {
+    display: none !important;
+}
+.pos-self-service .pos-leftheader .floating-order-container {
+    display: none !important;
+}
+
+/* Hide preset timing button */
+.pos-self-service .preset-time-btn {
+    display: none !important;
+}
+
+/* Hide cashier name */
+.pos-self-service .pos-rightheader .cashier-name {
+    display: none !important;
+}
+
+/* Hide the original Dropdown hamburger menu (replaced by PIN-protected button) */
+.pos-self-service .pos-rightheader > .status-buttons > .o-dropdown {
+    display: none !important;
+}
+
+/* --- NUMPAD --- */
+
+/* Hide "Prix" button */
+.pos-self-service .numpad-price {
+    display: none !important;
+}
+
+/* Hide "%" discount button */
+.pos-self-service .numpad-discount {
+    display: none !important;
+}
+
+/* --- LEFT PANEL --- */
+
+/* Hide entire control-buttons row (Client, Note, three-dots, save order) */
+.pos-self-service .control-buttons {
+    display: none !important;
+}
+
+/* Hide mobile more button (three dots on small screens) */
+.pos-self-service .mobile-more-button {
+    display: none !important;
+}
+
+/* Hide SelectPartnerButton on mobile (in ActionpadWidget) */
+.pos-self-service .actionpad .set-partner {
+    display: none !important;
+}
