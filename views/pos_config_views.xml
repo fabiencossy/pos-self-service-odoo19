@@ -5,15 +5,13 @@
         <field name="model">pos.config</field>
         <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//notebook" position="inside">
-                <page string="Self-Service" name="self_service">
+            <xpath expr="//sheet" position="inside">
+                <group string="Self-Service" name="self_service_group">
                     <group>
-                        <group string="Mode Self-Service">
-                            <field name="self_service_mode"/>
-                            <field name="self_service_pin" invisible="not self_service_mode" password="True"/>
-                        </group>
+                        <field name="self_service_mode"/>
+                        <field name="self_service_pin" invisible="not self_service_mode" password="True"/>
                     </group>
-                </page>
+                </group>
             </xpath>
         </field>
     </record>
