@@ -7,7 +7,8 @@ class PosConfig(models.Model):
     self_service_mode = fields.Boolean(
         string="Mode Self-Service",
         default=False,
-        help="Active le mode self-service qui masque les boutons non nécessaires pour les clients.",
+        help="Active le mode self-service qui masque les boutons non nécessaires "
+             "et protège le menu par code PIN.",
     )
     self_service_pin = fields.Char(
         string="Code PIN Self-Service",
